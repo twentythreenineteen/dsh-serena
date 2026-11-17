@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Serena code intelligence (dsh-serena)",
+    "description": "Mounts the Serena MCP server as the `serena` tool namespace (`mcp__serena__*`), providing LSP-backed symbol search, reference lookup, semantic editing, and project memory. Requires `serena` on PATH (or set `command` to `uvx` in your profile patch)."
+  }
+}

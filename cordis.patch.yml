@@ -1,0 +1,46 @@
+# dsh-serena bundle patch.
+#
+# Mounts Serena (https://github.com/oraios/serena) via @deepseek-ai/dsh-mcp-client
+# under the `serena` tool namespace (`mcp__serena__*`).
+#
+# To override settings in your profile's cordis.patch.yml, restate the full config
+# under `id: serena-mcp` (patches replace a row's config rather than merging).
+# For example, to run via `uvx` instead of a globally installed `serena` binary:
+#
+#   - id: serena-mcp
+#     config:
+#       serverName: serena
+#       transport: stdio
+#       command: uvx
+#       args:
+#         - --from
+#         - git+https://github.com/oraios/serena
+#         - serena
+#         - start-mcp-server
+#         - --context
+#         - agent
+#         - --agent-interface
+#         - tools
+#         - --project-from-cwd
+#         - --open-web-dashboard
+#         - "false"
+#       toolCallTimeoutMs: 120000
+#       failOnStartupError: false
+- insert:
+    - id: serena-mcp
+      name: "@deepseek-ai/dsh-mcp-client"
+      config:
+        serverName: serena
+        transport: stdio
+        command: serena
+        args:
+          - start-mcp-server
+          - --context
+          - agent
+          - --agent-interface
+          - tools
+          - --project-from-cwd
+          - --open-web-dashboard
+          - "false"
+        toolCallTimeoutMs: 120000
+        failOnStartupError: false

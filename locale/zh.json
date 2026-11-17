@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Serena 语义代码智能 (dsh-serena)",
+    "description": "将 Serena MCP 服务器挂载为 `serena` 工具命名空间（`mcp__serena__*`），提供基于 LSP 的符号查找、引用追踪、语义级代码编辑与项目记忆能力。需要 PATH 中已安装 `serena`（或在 profile patch 中将 `command` 覆盖为 `uvx`）。"
+  }
+}
